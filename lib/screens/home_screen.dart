@@ -35,14 +35,13 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: _screens[currentIndex],
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: currentIndex,
-        onDestinationSelected: (index) =>
-            context.read<NavigationProvider>().setIndex(index),
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.add), label: 'Add'),
-          NavigationDestination(icon: Icon(Icons.list), label: 'Subjects'),
-          NavigationDestination(icon: Icon(Icons.bar_chart), label: 'Summary'),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) => context.read<NavigationProvider>().setIndex(index),
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Subjects'),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: 'Summary'),
         ],
       ),
     );
