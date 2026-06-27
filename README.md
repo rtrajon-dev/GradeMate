@@ -29,6 +29,19 @@ flutter pub get
 flutter run
 ```
 
+## Testing
+
+Run the test suite:
+
+```bash
+flutter test
+```
+
+This runs:
+
+- `test/subject_test.dart` — verifies the `Subject.grade` getter at every threshold (A ≥ 80, B ≥ 65, C ≥ 50, F < 50), including the boundary values.
+- `test/widget_test.dart` — a smoke test confirming the app boots without errors.
+
 ## Tech
 
 - Flutter
