@@ -1,17 +1,36 @@
-# grademate
+# GradeMate
 
-A new Flutter project.
+A Flutter app to track subjects, marks, and grades with a live result summary.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Add Subject** screen with form validation (name required, mark 0–100).
+- **Subject List** screen using `ListView.builder`, showing each subject's name, mark, and letter grade, with swipe-to-delete (`Dismissible`).
+- **Summary** screen with total subjects, average mark, and overall grade that update **live**.
+- **Light / dark theme toggle** in the AppBar.
+- **3 screens** navigated via a `BottomNavigationBar`.
+- All state managed with **Provider** (no `setState`).
 
-A few resources to get you started if this is your first Flutter project:
+## Grade scale
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| Grade | Range |
+|-------|-------|
+| A | ≥ 80 |
+| B | ≥ 65 |
+| C | ≥ 50 |
+| F | < 50 |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## How to run
+
+```bash
+git clone <repo-url>
+cd grademate
+flutter pub get
+flutter run
+```
+
+## Tech
+
+- Flutter
+- Dart
+- Provider (state management)
