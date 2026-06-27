@@ -3,6 +3,7 @@ import '../models/subject.dart';
 
 class SubjectProvider extends ChangeNotifier {
   final List<Subject> _subjects = [];
+  int _nextId = 0;
 
   List<Subject> get subjects => List.unmodifiable(_subjects);
 
@@ -26,13 +27,13 @@ class SubjectProvider extends ChangeNotifier {
     return 'F';
   }
 
-  void addSubject(Subject subject) {
-    _subjects.add(subject);
+  void addSubject(String name, int mark) {
+    _subjects.add(Subject(id: _nextId++, name: name, mark: mark));
     notifyListeners();
   }
 
-  void removeSubject(int index) {
-    _subjects.removeAt(index);
+  void removeSubject(int id) {
+    _subjects.removeWhere((s) => s.id == id);
     notifyListeners();
   }
 }

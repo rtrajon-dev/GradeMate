@@ -1,8 +1,10 @@
 class Subject {
+  final int id;
   final String name;
   final int _mark;
 
-  Subject({required this.name, required int mark}) : _mark = mark;
+  Subject({required this.id, required this.name, required int mark})
+      : _mark = mark;
 
   int get mark => _mark;
 

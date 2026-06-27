@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/subject.dart';
 import '../providers/subject_provider.dart';
 
 class AddSubjectScreen extends StatefulWidget {
@@ -44,17 +43,15 @@ class _AddSubjectScreenState extends State<AddSubjectScreen> {
   void _submit() {
     if (!_formKey.currentState!.validate()) return;
 
-    final subject = Subject(
-      name: _nameController.text.trim(),
-      mark: int.parse(_markController.text.trim()),
-    );
-    context.read<SubjectProvider>().addSubject(subject);
+    final name = _nameController.text.trim();
+    final mark = int.parse(_markController.text.trim());
+    context.read<SubjectProvider>().addSubject(name, mark);
 
     _nameController.clear();
     _markController.clear();
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${subject.name} added')),
+      SnackBar(content: Text('$name added')),
     );
   }
 

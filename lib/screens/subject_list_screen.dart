@@ -26,10 +26,10 @@ class SubjectListScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             final subject = subjects[index];
             return Dismissible(
-              key: ValueKey('${subject.name}_$index'),
+              key: ValueKey(subject.id),
               direction: DismissDirection.endToStart,
               onDismissed: (_) =>
-                  context.read<SubjectProvider>().removeSubject(index),
+                  context.read<SubjectProvider>().removeSubject(subject.id),
               background: Container(
                 color: Theme.of(context).colorScheme.errorContainer,
                 alignment: Alignment.centerRight,
